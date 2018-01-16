@@ -1,0 +1,11 @@
+#planeGame{
+	background: url(../img/bg.jpg);;
+	width: 480px;
+	height: 853px;
+	position: absolute;
+	top:0;
+	left:0;
+	bottom:0;
+	right:0;
+	margin:auto;
+}
