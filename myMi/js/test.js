@@ -71,7 +71,11 @@ class cell_Product{
         this.myDom.children().eq(4).html(this.pricePre);
 
     }
-   
+   /**
+    * 设置界面的调用
+    * @param  {[type]} let i             [description]
+    * @return {[type]}     [description]
+    */
     for(let i =0;i<2;i++){
 
         let $top = i*330;
@@ -90,6 +94,7 @@ class cell_Product{
          });
         }
     }
+
 
 
 for(let i =0;i<2;i++){

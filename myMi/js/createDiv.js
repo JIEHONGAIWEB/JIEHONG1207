@@ -9,14 +9,20 @@ define(function(require,exports,module){
 	 */
 	//需要jquery的文件
 	//
-	let jq = require('common.js');
-
+	 let cell = require('cell.js');
+	
 	//将动态的生成作为函数，进行调用
+	/**
+	 * 也是可以改进成为面向对象的思想
+	 * 文字信息类的内容
+	 * @return {[type]} [description]
+	 */
 	function createUI(){
 		let arrTopBar = ["小米商城","MIUI","loT","云服务","水滴","金融","有品","Select Region"];
 		let arrTopBarHref = ["https://www.mi.com/index.html","http://www.miui.com/","https://iot.mi.com/index.html","https://i.mi.com/","https://shuidi.mi.com/","https://jr.mi.com/?from=micom","https://youpin.mi.com/","https://www.mi.com/index.html#J_modal-globalSites"];
 		let  logIn = ["#","#","#"];
 		let inform = ["登录","注册","消息通知"];
+
 		//顶部导航栏的内容
 		for(let i = 0 ; i < arrTopBar.length;i++ ){
 		
@@ -48,6 +54,7 @@ define(function(require,exports,module){
 			$(".header-nav").append("<a></a>");
 			$(".header-nav a").eq(i).text( headerArr[i]);
 		}
+
 		/**
 		 * home的信息
 		 * 轮播图
@@ -83,20 +90,32 @@ define(function(require,exports,module){
 		//循环的添加了产品的详细区域
 		for(let i = 0; i < titleArr.length;i++ ){
 			let $headers = $(".page-main header").eq(i).after("<div></div>");
+			//这步操作是allProducts
+			//
 			$headers.siblings().attr('class','allProducts');
+			
+		}
+		for(let i =1 ;i<titleArr.length-4;i++){
 			$(".allProducts").eq(i).append("<div></div><div></div>")
 			$(".allProducts").eq(i).children().eq(0).attr("class","left");
 			$(".allProducts").eq(i).children().eq(1).attr("class","right");
 		}
-		
-		
+		// $("").appendTo(".page-circum")
+		// $("<div></div>").appendTo(".page-circum");
+		// $(".allProducts").eq(5).wrap("<div></div>");
 
 
 		/**
 		 * 页面底部的内容
-		 */						
+		 */		
+						
 	}
-
+	//自己以来的文件cell.js
+	exports.cell = function(obj){
+		cell.cell(obj);
+	};
+	//开放自己的create函数
+	//
 	exports.UI = createUI;
 	
 	
